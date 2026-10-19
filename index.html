@@ -1,0 +1,1067 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento y SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="NATURA: descubre productos naturales, decoración ecológica, plantas y soluciones sostenibles para crear espacios llenos de vida.">
+
+    <meta name="keywords"
+          content="productos naturales, plantas, decoración ecológica, sostenibilidad, vida natural">
+
+    <meta name="author" content="NATURA">
+
+    <meta name="theme-color" content="#244b38">
+
+    <title>NATURA | Productos Naturales y Diseño Sostenible</title>
+
+    <!-- Bootstrap 5.3 CSS oficial -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <style>
+        /* Variables principales de colores */
+        :root {
+            --verde-oscuro: #244b38;
+            --verde-medio: #52795d;
+            --verde-claro: #eaf1e8;
+            --beige: #f7f5ef;
+            --texto: #343a35;
+        }
+
+        /* Configuración general */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--texto);
+            background-color: #ffffff;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .text-verde {
+            color: var(--verde-oscuro);
+        }
+
+        .bg-verde {
+            background-color: var(--verde-oscuro);
+        }
+
+        .bg-beige {
+            background-color: var(--beige);
+        }
+
+        /* Botones personalizados */
+        .btn-natura {
+            background-color: var(--verde-oscuro);
+            color: white;
+            border: 2px solid var(--verde-oscuro);
+            border-radius: 30px;
+            padding: 12px 26px;
+            transition: 0.3s;
+        }
+
+        .btn-natura:hover {
+            background-color: var(--verde-medio);
+            border-color: var(--verde-medio);
+            color: white;
+        }
+
+        .btn-outline-natura {
+            color: var(--verde-oscuro);
+            border: 2px solid var(--verde-oscuro);
+            border-radius: 30px;
+            padding: 12px 26px;
+        }
+
+        .btn-outline-natura:hover {
+            background-color: var(--verde-oscuro);
+            color: white;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .navbar-brand {
+            color: var(--verde-oscuro);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .navbar-brand:hover {
+            color: var(--verde-medio);
+        }
+
+        .navbar .nav-link {
+            color: var(--texto);
+            font-weight: 600;
+            padding: 10px 14px !important;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus {
+            color: var(--verde-medio);
+        }
+
+        /* Portada principal */
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(15, 39, 25, 0.82),
+                    rgba(15, 39, 25, 0.20)
+                ),
+                url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=85")
+                center / cover no-repeat;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            max-width: 750px;
+        }
+
+        .hero p {
+            max-width: 580px;
+            font-size: 1.1rem;
+        }
+
+        /* Estilos comunes de las secciones */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-subtitle {
+            color: var(--verde-medio);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+
+        .section-title {
+            color: var(--verde-oscuro);
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            margin-bottom: 20px;
+        }
+
+        /* Imagen de introducción */
+        .intro-image {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        /* Tarjetas de servicios */
+        .service-card {
+            height: 100%;
+            padding: 30px 22px;
+            background: white;
+            border: 1px solid #e8ece7;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(36, 75, 56, 0.10);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--verde-medio);
+            margin-bottom: 18px;
+        }
+
+        /* Banner divisor */
+        .banner {
+            background:
+                linear-gradient(
+                    rgba(22, 48, 33, 0.86),
+                    rgba(22, 48, 33, 0.86)
+                ),
+                url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=80")
+                center / cover no-repeat;
+            color: white;
+            padding: 85px 0;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: clamp(1.9rem, 5vw, 3.2rem);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Galería de productos */
+        .product-card {
+            height: 100%;
+            overflow: hidden;
+            border: 1px solid #e9ece8;
+            border-radius: 15px;
+            background: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.09);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .product-content {
+            padding: 22px;
+        }
+
+        .product-content h3 {
+            font-size: 1.2rem;
+            color: var(--verde-oscuro);
+        }
+
+        /* Formulario */
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 10px;
+        }
+
+        .form-control:focus {
+            border-color: var(--verde-medio);
+            box-shadow: 0 0 0 0.2rem rgba(82, 121, 93, 0.15);
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #193728;
+            color: #e7eee8;
+        }
+
+        footer h2 {
+            font-size: 1.15rem;
+            color: white;
+        }
+
+        footer a {
+            color: #e7eee8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            margin-right: 8px;
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background-color: white;
+            color: var(--verde-oscuro);
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 767.98px) {
+            .hero {
+                min-height: 70vh;
+                text-align: center;
+                background-position: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .section-padding {
+                padding: 55px 0;
+            }
+
+            .intro-image {
+                height: 300px;
+            }
+
+            .product-card img {
+                height: 220px;
+            }
+        }
+
+        /* Respeta la preferencia de movimiento del usuario */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Encabezado y menú de navegación -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+            <div class="container">
+
+                <!-- Logotipo de texto -->
+                <a class="navbar-brand" href="#inicio" aria-label="NATURA, ir al inicio">
+                    <i class="bi bi-flower1 me-2" aria-hidden="true"></i>NATURA
+                </a>
+
+                <!-- Botón para abrir el menú en móviles -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir o cerrar el menú de navegación">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Enlaces del menú -->
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#nosotros">Nosotros</a>
+                        </li>
+
+                        <!-- Menú desplegable -->
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#servicios"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Servicios
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#servicios">
+                                        Nuestros servicios
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#galeria">
+                                        Galería
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#galeria">Colección</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+
+                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                            <a class="btn btn-natura" href="#contacto">
+                                Contáctanos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Portada o Hero Section -->
+        <section class="hero" id="inicio" aria-labelledby="tituloPrincipal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+
+                        <p class="text-uppercase fw-bold mb-3">
+                            Vuelve a lo esencial
+                        </p>
+
+                        <h1 id="tituloPrincipal" class="mb-4">
+                            Conecta con la naturaleza, transforma tu espacio.
+                        </h1>
+
+                        <p class="mb-4">
+                            Descubre una forma más natural de vivir con ideas,
+                            productos y espacios inspirados en la belleza de
+                            nuestro planeta.
+                        </p>
+
+                        <a href="#galeria" class="btn btn-natura me-2 mb-2">
+                            Explorar colección
+                            <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="#nosotros" class="btn btn-outline-light rounded-pill px-4 py-3 mb-2">
+                            Conócenos
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introducción: texto e imagen en dos columnas -->
+        <section class="section-padding" id="nosotros" aria-labelledby="tituloNosotros">
+            <div class="container">
+                <div class="row align-items-center g-5">
+
+                    <article class="col-12 col-lg-6">
+                        <p class="section-subtitle">Nuestra esencia</p>
+
+                        <h2 id="tituloNosotros" class="section-title">
+                            Pequeños cambios, un mundo mejor
+                        </h2>
+
+                        <p>
+                            En NATURA creemos que la naturaleza es una fuente
+                            inagotable de inspiración. Por eso, buscamos
+                            acercarte ideas que te permitan crear espacios
+                            agradables, tranquilos y llenos de vida.
+                        </p>
+
+                        <p>
+                            Nuestra propuesta combina diseño, sencillez y
+                            conciencia ambiental para que disfrutes de un
+                            estilo de vida más conectado con el entorno.
+                        </p>
+
+                        <a href="#servicios" class="btn btn-natura mt-2">
+                            Descubre lo que hacemos
+                        </a>
+                    </article>
+
+                    <div class="col-12 col-lg-6">
+                        <img
+                            src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1000&q=80"
+                            class="intro-image"
+                            alt="Plantas de interior y decoración natural en una habitación luminosa"
+                            loading="lazy">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios destacados: tres columnas -->
+        <section
+            class="section-padding bg-beige"
+            id="servicios"
+            aria-labelledby="tituloServicios">
+
+            <div class="container">
+
+                <header class="text-center mb-5">
+                    <p class="section-subtitle">Lo que nos inspira</p>
+
+                    <h2 id="tituloServicios" class="section-title">
+                        Naturaleza en cada detalle
+                    </h2>
+
+                    <p class="mx-auto" style="max-width: 650px;">
+                        Creamos propuestas pensadas para disfrutar de los
+                        espacios, cuidar los detalles y valorar nuestro entorno.
+                    </p>
+                </header>
+
+                <div class="row g-4">
+
+                    <!-- Servicio 1 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <i class="bi bi-flower2 service-icon"
+                               aria-hidden="true"></i>
+
+                            <h3 class="h4 mb-3">Plantas y vida</h3>
+
+                            <p class="mb-0">
+                                Ideas para integrar plantas en tus espacios
+                                y crear ambientes frescos y acogedores.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Servicio 2 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <i class="bi bi-house-heart service-icon"
+                               aria-hidden="true"></i>
+
+                            <h3 class="h4 mb-3">Diseño natural</h3>
+
+                            <p class="mb-0">
+                                Inspiración para decorar tu hogar con un
+                                estilo sencillo, cálido y natural.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Servicio 3 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="service-card">
+                            <i class="bi bi-recycle service-icon"
+                               aria-hidden="true"></i>
+
+                            <h3 class="h4 mb-3">Consumo consciente</h3>
+
+                            <p class="mb-0">
+                                Recomendaciones para adoptar hábitos
+                                responsables y aprovechar mejor los recursos.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner divisor -->
+        <section class="banner" aria-labelledby="tituloBanner">
+            <div class="container">
+
+                <p class="text-uppercase fw-bold mb-3">
+                    Inspírate. Respira. Vive.
+                </p>
+
+                <h2 id="tituloBanner" class="mb-4">
+                    La naturaleza hace la diferencia
+                </h2>
+
+                <p class="mx-auto mb-4" style="max-width: 700px;">
+                    Encuentra nuevas ideas para transformar tus espacios
+                    en lugares que transmitan calma, equilibrio y bienestar.
+                </p>
+
+                <a href="#galeria" class="btn btn-light rounded-pill px-4 py-3">
+                    Ver nuestra galería
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Galería de seis tarjetas -->
+        <section
+            class="section-padding"
+            id="galeria"
+            aria-labelledby="tituloGaleria">
+
+            <div class="container">
+
+                <header class="text-center mb-5">
+                    <p class="section-subtitle">Nuestra inspiración</p>
+
+                    <h2 id="tituloGaleria" class="section-title">
+                        Ideas para llenar tu espacio de vida
+                    </h2>
+
+                    <p class="mx-auto" style="max-width: 650px;">
+                        Explora diferentes formas de combinar naturaleza,
+                        decoración y sencillez en tu día a día.
+                    </p>
+                </header>
+
+                <div class="row g-4">
+
+                    <!-- Tarjeta 1 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80"
+                                alt="Planta verde en una maceta decorativa"
+                                loading="lazy">
+
+                            <div class="product-content">
+                                <h3>Plantas de interior</h3>
+
+                                <p>
+                                    Dale un toque fresco y natural a cada rincón
+                                    de tu hogar.
+                                </p>
+
+                                <a href="#contacto"
+                                   class="btn btn-outline-natura">
+                                    Más información
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 2 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80"
+                                alt="Sala de estar luminosa con muebles de estilo natural"
+                                loading="lazy">
+
+                            <div class="product-content">
+                                <h3>Hogar natural</h3>
+
+                                <p>
+                                    Descubre ideas de decoración para crear
+                                    ambientes cómodos y relajantes.
+                                </p>
+
+                                <a href="#contacto"
+                                   class="btn btn-outline-natura">
+                                    Más información
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 3 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=800&q=80"
+                                alt="Muebles de madera y materiales de apariencia natural"
+                                loading="lazy">
+
+                            <div class="product-content">
+                                <h3>Materiales naturales</h3>
+
+                                <p>
+                                    Inspírate en texturas y materiales que
+                                    aportan calidez a tus espacios.
+                                </p>
+
+                                <a href="#contacto"
+                                   class="btn btn-outline-natura">
+                                    Más información
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 4 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80"
+                                alt="Persona cuidando pequeñas plantas en un jardín"
+                                loading="lazy">
+
+                            <div class="product-content">
+                                <h3>Jardinería en casa</h3>
+
+                                <p>
+                                    Aprende a incorporar el cuidado de las
+                                    plantas a tu rutina diaria.
+                                </p>
+
+                                <a href="#contacto"
+                                   class="btn btn-outline-natura">
+                                    Más información
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 5 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=80"
+                                alt="Espacio interior decorado con plantas y luz natural"
+                                loading="lazy">
+
+                            <div class="product-content">
+                                <h3>Espacios tranquilos</h3>
+
+                                <p>
+                                    Encuentra inspiración para disfrutar
+                                    de rincones cómodos y luminosos.
+                                </p>
+
+                                <a href="#contacto"
+                                   class="btn btn-outline-natura">
+                                    Más información
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 6 -->
+                    <article class="col-12 col-md-6 col-lg-4">
+                        <div class="product-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=800&q=80"
+                                alt="Paisaje natural al amanecer con vegetación y luz cálida"
+                                loading="lazy">
+
+                            <div class="product-content">
+                                <h3>Vida sostenible</h3>
+
+                                <p>
+                                    Conoce pequeños hábitos que pueden
+                                    ayudarte a cuidar el medioambiente.
+                                </p>
+
+                                <a href="#contacto"
+                                   class="btn btn-outline-natura">
+                                    Más información
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto con formulario -->
+        <section
+            class="section-padding bg-beige"
+            id="contacto"
+            aria-labelledby="tituloContacto">
+
+            <div class="container">
+                <div class="row g-5 align-items-start">
+
+                    <article class="col-12 col-lg-5">
+                        <p class="section-subtitle">Estamos para ayudarte</p>
+
+                        <h2 id="tituloContacto" class="section-title">
+                            Hablemos de tus ideas
+                        </h2>
+
+                        <p>
+                            ¿Quieres conocer más sobre nuestras propuestas?
+                            Envíanos un mensaje y cuéntanos qué tienes en mente.
+                        </p>
+
+                        <p>
+                            <i class="bi bi-envelope me-2 text-verde"
+                               aria-hidden="true"></i>
+                            contacto@natura.example
+                        </p>
+
+                        <p>
+                            <i class="bi bi-clock me-2 text-verde"
+                               aria-hidden="true"></i>
+                            Atención de lunes a viernes
+                        </p>
+                    </article>
+
+                    <div class="col-12 col-lg-7">
+                        <form id="formularioContacto">
+
+                            <div class="row g-3">
+
+                                <div class="col-12 col-md-6">
+                                    <label for="nombre" class="form-label">
+                                        Nombre
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="nombre"
+                                        name="nombre"
+                                        placeholder="Escribe tu nombre"
+                                        autocomplete="name"
+                                        required>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="correo" class="form-label">
+                                        Correo electrónico
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="correo"
+                                        name="correo"
+                                        placeholder="nombre@ejemplo.com"
+                                        autocomplete="email"
+                                        required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="asunto" class="form-label">
+                                        Asunto
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="asunto"
+                                        name="asunto"
+                                        placeholder="¿En qué podemos ayudarte?"
+                                        required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="mensaje" class="form-label">
+                                        Mensaje
+                                    </label>
+
+                                    <textarea
+                                        class="form-control"
+                                        id="mensaje"
+                                        name="mensaje"
+                                        rows="5"
+                                        placeholder="Escribe tu mensaje..."
+                                        required></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-natura">
+                                        Enviar mensaje
+                                        <i class="bi bi-send ms-2"
+                                           aria-hidden="true"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Mensaje de estado accesible -->
+                                <div class="col-12">
+                                    <p
+                                        id="estadoFormulario"
+                                        class="mb-0"
+                                        role="status"
+                                        aria-live="polite">
+                                    </p>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página con enlaces y redes sociales -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+
+            <div class="row g-4 pb-4">
+
+                <!-- Información de la marca -->
+                <section class="col-12 col-md-6 col-lg-4"
+                         aria-labelledby="footerMarca">
+
+                    <h2 id="footerMarca" class="h4 mb-3">
+                        <i class="bi bi-flower1 me-2"
+                           aria-hidden="true"></i>NATURA
+                    </h2>
+
+                    <p>
+                        Inspiramos una forma de vivir más natural,
+                        sencilla y consciente.
+                    </p>
+
+                    <div class="mt-3">
+                        <a href="https://www.instagram.com/"
+                           class="social-link"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Instagram">
+
+                            <i class="bi bi-instagram"
+                               aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.facebook.com/"
+                           class="social-link"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Facebook">
+
+                            <i class="bi bi-facebook"
+                               aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://www.pinterest.com/"
+                           class="social-link"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Pinterest">
+
+                            <i class="bi bi-pinterest"
+                               aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Enlaces de navegación -->
+                <nav class="col-12 col-md-6 col-lg-4"
+                     aria-labelledby="footerEnlaces">
+
+                    <h2 id="footerEnlaces" class="mb-3">
+                        Enlaces rápidos
+                    </h2>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="#inicio">Inicio</a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#nosotros">Nosotros</a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#servicios">Servicios</a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#galeria">Galería</a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Información adicional -->
+                <aside class="col-12 col-lg-4"
+                       aria-labelledby="footerContacto">
+
+                    <h2 id="footerContacto" class="mb-3">
+                        Contáctanos
+                    </h2>
+
+                    <p>
+                        <i class="bi bi-envelope me-2"
+                           aria-hidden="true"></i>
+                        contacto@natura.example
+                    </p>
+
+                    <p>
+                        <i class="bi bi-globe me-2"
+                           aria-hidden="true"></i>
+                        Inspiración para una vida natural
+                    </p>
+
+                    <a href="#contacto" class="btn btn-outline-light rounded-pill">
+                        Escríbenos
+                    </a>
+                </aside>
+
+            </div>
+
+            <hr class="border-light opacity-25">
+
+            <!-- Derechos de autor -->
+            <div class="text-center pt-2">
+                <p class="mb-0">
+                    &copy; <span id="anioActual"></span> NATURA.
+                    Todos los derechos reservados.
+                </p>
+
+                <small>
+                    Diseñado con HTML5, CSS3 y Bootstrap 5.3.
+                </small>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JavaScript Bundle oficial -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Funcionalidad básica de la página -->
+    <script>
+        // Actualiza automáticamente el año del copyright.
+        document.getElementById("anioActual").textContent =
+            new Date().getFullYear();
+
+        // El formulario muestra una confirmación visual.
+        // Para enviar mensajes reales necesita un backend o un servicio de formularios.
+        document.getElementById("formularioContacto").addEventListener(
+            "submit",
+            function (evento) {
+
+                evento.preventDefault();
+
+                const formulario = evento.currentTarget;
+                const estado = document.getElementById("estadoFormulario");
+
+                if (!formulario.checkValidity()) {
+                    formulario.reportValidity();
+                    return;
+                }
+
+                estado.textContent =
+                    "El formulario funciona correctamente, pero todavía no está conectado a un servidor. Tu mensaje no se ha enviado.";
+
+                estado.className = "mb-0 text-verde fw-semibold";
+
+            }
+        );
+    </script>
+
+</body>
+</html>
